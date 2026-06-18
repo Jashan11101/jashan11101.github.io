@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Route & Rate Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="taskpane.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChYFu82xWcUOpUS23eSbuMPgGm7swXuSo&libraries=places&callback=initMapFallback"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="topBar">
+      <div id="title">Route & Rate</div>
+      <div id="controls">
+        <button id="btnFetchText" title="Grab Address from Email">📩 Extract Address</button>
+        <button id="btnAdd" title="Add location">＋</button>
+        <button id="btnOpen" title="Open in Google Maps">🗺️</button>
+      </div>
+    </div>
+
+    <div id="leftPane">
+      <div id="stopsCard">
+        <ul id="stopsList"></ul>
+      </div>
+
+      <div id="tools">
+        <div class="rateRow">
+          <label>Rate / mile</label>
+          <input id="rate" type="number" step="0.1" value="2.5" />
+          <select id="currency"><option>CAD</option><option>USD</option></select>
+        </div>
+        <div style="margin-top:8px">
+          <button id="calc" style="width:100%; padding:8px; cursor:pointer;">Calculate Route</button>
+        </div>
+      </div>
+
+      <div id="summary">
+        <div id="routeText">Route: Not calculated</div>
+        <div id="distance">Distance: 0.0 mi — CAD 0.00</div>
+      </div>
+    </div>
+
+    <div id="mapWrap">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>

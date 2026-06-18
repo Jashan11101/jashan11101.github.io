@@ -1,0 +1,123 @@
+:root {
+  --primary: #0078d4;
+  --muted: #eef2f6;
+  --card: #fff;
+  --ui-font: "Segoe UI", Roboto, Arial, sans-serif;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--ui-font);
+  background: #f6f8fa;
+  overflow: hidden;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+#topBar {
+  height: 46px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px solid #e6eef6;
+}
+#title {
+  font-weight: 700;
+  color: #0b2a43;
+}
+#controls button {
+  background: var(--muted);
+  border: 1px solid #ccd4dc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+#leftPane {
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;
+}
+#stopsCard {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 4px 12px rgba(12,20,30,0.04);
+  overflow-y: auto;
+  max-height: 25vh;
+}
+#stopsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+li.stop-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background: #fbfdff;
+  border: 1px solid #e8eef6;
+  padding: 6px;
+  border-radius: 6px;
+}
+.stop-input {
+  flex: 1;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccd4dc;
+  font-size: 13px;
+}
+.btn-remove {
+  background: transparent;
+  border: none;
+  color: #a00;
+  cursor: pointer;
+  font-weight: bold;
+}
+.rateRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.rateRow input, .rateRow select {
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccd4dc;
+}
+#mapWrap {
+  flex: 1;
+  position: relative;
+  min-height: 200px;
+}
+#map {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+#summary {
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e9eef6;
+}
+#routeText {
+  color: #475569;
+  font-size: 12px;
+}
+#distance {
+  font-weight: 700;
+  color: #0b2a43;
+  margin-top: 4px;
+  font-size: 14px;
+}

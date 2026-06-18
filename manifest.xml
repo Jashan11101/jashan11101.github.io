@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appshere/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
+  <Id>a1b2c3d4-4455-6677-8899-aabbccddeeff</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>RouteExtension</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Route &amp; Rate Panel" />
+  <Description DefaultValue="Select text or view an email to instantly calculate miles, rates, and maps." />
+  <IconUrl DefaultValue="https://jashan11101.github.io/icons/icon48.png" />
+  <HighResolutionIconUrl DefaultValue="https://jashan11101.github.io/icons/icon128.png" />
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" Version="1.5" />
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://jashan11101.github.io/taskpane.html" />
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" />
+  </Rule>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <Sets>
+        <Set Name="Mailbox" Version="1.5" />
+      </Sets>
+    </Requirements>
+    <Description DefaultValue="Select text or view an email to instantly calculate miles, rates, and maps." />
+    <DisplayName DefaultValue="Route &amp; Rate Panel" />
+    <IconUrl DefaultValue="https://jashan11101.github.io/icons/icon48.png" />
+    <Hosts>
+      <Host xsi:type="Mailbox">
+        <DesktopFormFactor>
+          <FunctionFile resid="Taskpane.Url" />
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="msgReadGroup">
+                <Label resid="GroupLabel" />
+                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                  <Label resid="TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label" />
+                    <Description resid="TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16" />
+                    <bt:Image size="32" resid="Icon.32x32" />
+                    <bt:Image size="80" resid="Icon.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://jashan11101.github.io/icons/icon48.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://jashan11101.github.io/icons/icon48.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://jashan11101.github.io/icons/icon128.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://jashan11101.github.io/taskpane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GroupLabel" DefaultValue="Route Tools" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Open Route Panel" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens the side panel to calculate route mileage and rates." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
